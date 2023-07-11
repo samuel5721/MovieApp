@@ -26,7 +26,7 @@ function App() {
       {loading ? <h3>loading...</h3> :
         movies.map(movie =>
           <Movie
-            id={movie.id}
+            key={movie.id}
             title={movie.title}
             summary={movie.summary ?? "none"}
             genres={movie.genres ?? []}

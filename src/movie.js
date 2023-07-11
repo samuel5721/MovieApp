@@ -1,5 +1,7 @@
-function Movie({ id, title, summary, genres, rating, cover_image}) {
-    return <div key={id}>
+import PropTypes from 'prop-types';
+
+function Movie({ title, summary, genres, rating, cover_image}) {
+    return <div>
     <h2>{title}</h2>
     <img src={cover_image} alt="image"></img>
     <p>{(summary.length > 500) ? summary.substr(0, 500)+"..." : summary}</p>
@@ -9,4 +11,13 @@ function Movie({ id, title, summary, genres, rating, cover_image}) {
     </ul>
   </div>
 }
+
+Movie.propTypes = {
+    title : PropTypes.string.isRequired,
+    summary : PropTypes.string.isRequired,
+    genres : PropTypes.array.isRequired,
+    rating : PropTypes.number.isRequired,
+    cover_image : PropTypes.string.isRequired,
+}
+
 export default Movie;
