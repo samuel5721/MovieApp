@@ -1,0 +1,4 @@
+http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.xml?key=18c52272526d2f30a425cf487e1c58b0&targetDt=20230701
+
+
+2023년 7월 1일 기준 국내 박스오피스 자료
