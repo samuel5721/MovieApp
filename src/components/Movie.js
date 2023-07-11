@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 function Movie({ title, summary, genres, rating, cover_image}) {
