@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
-import Movie from './components/movie';
+import Movie from "../components/Movie.js";
 
 function Home() {
   const [loading, setLoding] = useState(true);
   const [movies, setMovies] = useState([]);
   const getMovies = async () => {
-    const response = await fetch(`https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=year`);
+    const response = await fetch(`http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=61f0454ae242d4ad2af7ce1bc8fa06f0&openStartDt=2023`);
     const json = await response.json();
-    setMovies(json.data.movies);
+    setMovies(json.movieListResult.movieList);
     setLoding(false);
   }
 
@@ -19,16 +19,15 @@ function Home() {
   console.log(movies);
 
   return (
-    <div className="App">
+    <div className="Home">
       {loading ? <h3>loading...</h3> :
         movies.map(movie =>
           <Movie
-            key={movie.id}
-            title={movie.title}
-            summary={movie.summary ?? "none"}
-            genres={movie.genres ?? []}
-            rating={movie.rating ?? "none"}
-            cover_image={movie.medium_cover_image}
+            key={Number(movie.movieCd)}
+            id={movie.movieNm}
+            title={movie.movieNm}
+            prdtYear={Number(movie.prdtYear)}
+            repGenreNm={movie.repGenreNm}
           />
         )
       }
