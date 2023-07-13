@@ -6,7 +6,7 @@ function Movie({ id, title, prdtYear, repGenreNm}) {
     return <div>
     <h2><Link to={`/movie/${id}`}>{title}</Link></h2>
     <ul>
-        <li>개봉연도 : { prdtYear }</li>
+        <li>제작연도 : { prdtYear }</li>
         <li>장르 : { repGenreNm }</li>
     </ul>
   </div>

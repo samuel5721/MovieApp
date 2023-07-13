@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import Movie from "../components/Movie.js";
+import Header from '../components/Header.js';
+import Aside from '../components/Aside.js';
 
 function Home() {
   const [loading, setLoding] = useState(true);
@@ -20,17 +23,21 @@ function Home() {
 
   return (
     <div className="Home">
-      {loading ? <h3>loading...</h3> :
-        movies.map(movie =>
-          <Movie
-            key={Number(movie.movieCd)}
-            id={movie.movieNm}
-            title={movie.movieNm}
-            prdtYear={Number(movie.prdtYear)}
-            repGenreNm={movie.repGenreNm}
-          />
-        )
-      }
+      <Header />
+      <Aside movies={movies}/>
+      <section>
+        {loading ? <h3>loading...</h3> :
+          movies.map(movie =>
+            <Movie
+              key={Number(movie.movieCd)}
+              id={movie.movieNm}
+              title={movie.movieNm}
+              prdtYear={Number(movie.prdtYear)}
+              repGenreNm={movie.repGenreNm}
+            />
+          )
+        }
+      </section>
     </div>
   );
 }

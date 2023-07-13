@@ -1,0 +1,19 @@
+header {
+    text-align: center;
+}
+
+aside { 
+  position: relative;
+  float:left;
+  width:300px;
+}
+
+aside a {
+    text-decoration-line: none;
+    color: black;
+}
+
+section {
+    position: relative;
+    float: left;
+}
